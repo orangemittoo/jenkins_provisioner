@@ -1,0 +1,8 @@
+- name: clean yum packages
+  shell: yum clean all
+
+
+- name: upgrade all yum packages
+  yum:
+    name: '*'
+    state: latest

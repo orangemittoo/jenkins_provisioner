@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/Users/01011770/.ghq/stash.sprocket3.systems/scm/jqmb/jqmb_provisioner/jenkins","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
