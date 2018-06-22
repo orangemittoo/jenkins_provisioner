@@ -1,0 +1,11 @@
+- name: Set docker repo
+  copy:
+    src: docker.repo
+    dest: /etc/yum.repos.d/docker.repo
+    owner: root
+    group: root
+    mode: 0755
+- name: Install docker
+  yum:
+    name: docker-engine
+    state: present

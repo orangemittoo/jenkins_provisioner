@@ -1,8 +1,11 @@
 - name: clean yum packages
   shell: yum clean all
-
-
-- name: upgrade all yum packages
+- name: Yum update packages
   yum:
-    name: '*'
+    name: "*"
     state: latest
+- name: yum install modules
+  yum: name={{ item }} 
+  with_items:
+    - unzip
+    - tar

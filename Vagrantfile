@@ -6,6 +6,7 @@ Vagrant.configure(2) do |config|
         node.vm.network :private_network, ip: "192.168.100.20"
         node.vm.network :forwarded_port, id: "ssh", guest: 22, host: 2220
   end
+  config.vm.synced_folder "./", "/app"
   config.vm.provision "shell", inline: <<-SHELL
         cd /tmp
         sudo yum update
@@ -13,6 +14,5 @@ Vagrant.configure(2) do |config|
         sudo wget https://bootstrap.pypa.io/get-pip.py 
         sudo python get-pip.py
         sudo pip install ansible
-        ansible-playbook site.yml
   SHELL
 end
