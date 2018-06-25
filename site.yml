@@ -3,6 +3,6 @@
   vars_files:
     - ./group_vars/all.yml
   roles:
-    - yum
     - java
     - docker
+    - jenkins

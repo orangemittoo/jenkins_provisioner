@@ -2,3 +2,4 @@ download_url: http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec517
 download_folder: /opt
 java_name: "{{download_folder}}/jdk-8u171-linux-x64"
 java_archive: "{{download_folder}}/jdk-8u171-linux-x64.tar.gz"
+jenkins_home: /opt/app

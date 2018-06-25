@@ -1,11 +1,6 @@
 Vagrant.configure(2) do |config|
-  config.vm.box = "centos/7"
-  config.vm.define "target" do |node|
-        node.vm.box = "centos/7"
-        node.vm.hostname = "target"
-        node.vm.network :private_network, ip: "192.168.100.20"
-        node.vm.network :forwarded_port, id: "ssh", guest: 22, host: 2220
-  end
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.network :private_network, ip: "192.168.100.10"
   config.vm.synced_folder "./", "/app"
   config.vm.provision "shell", inline: <<-SHELL
         cd /tmp
