@@ -10,3 +10,6 @@
   apt:
     update_cache: yes
     name: jenkins={{ jenkins_version }}
+
+- name: Add docker group to jenkins
+  shell: usermod -aG docker jenkins

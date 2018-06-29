@@ -1,0 +1,17 @@
+- name: Add the Nginx key
+  apt_key:
+    url: http://nginx.org/keys/nginx_signing.key
+- name: Add the Nginx repository
+  apt_repository:
+    repo: '{{item}} http://nginx.org/packages/ubuntu/ {{ansible_distribution_release}} nginx'
+  with_items:
+    - deb
+    - deb-src
+- name: Install Nginx
+  apt:
+    update_cache: yes
+    name: "nginx={{nginx_version}}"
+- name: copy nginx config file
+  template: src=templates/app.conf.j2 dest={{ conf_file }}/app.conf
+- name: restart nginx
+  service: name=nginx state=restarted

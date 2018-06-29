@@ -1,0 +1,2 @@
+nginx_version: 1.14.0-1~trusty
+conf_file: /etc/nginx/conf.d
